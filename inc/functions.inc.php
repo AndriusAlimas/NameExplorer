@@ -1,3 +1,5 @@
 <?php
- echo "Functions loaded";
+ function e($value){
+    return htmlspecialchars($value, ENT_QUOTES,'UTF-8');
+ }
 ?>
