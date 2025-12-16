@@ -1,0 +1,3 @@
+<?php
+ echo "Connecting database";
+?>
