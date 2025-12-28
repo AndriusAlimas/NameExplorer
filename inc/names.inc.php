@@ -1,5 +1,7 @@
 <?php
-function fetch_names_by_initial($char){
+declare(strict_types=1);
+
+function fetch_names_by_initial(string $char): array{
     global $pdo;
     $stmt = $pdo->prepare("SELECT DISTINCT `name` FROM `names` WHERE `name` LIKE :expr ORDER BY `name` ASC");
     $stmt->bindValue(":expr","{$char}%");
