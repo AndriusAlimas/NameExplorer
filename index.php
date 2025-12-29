@@ -1,11 +1,7 @@
 <?php 
 require __DIR__ . "/inc/all.inc.php";
 
-$char = strtoupper((string)($_GET['char'] ?? ''));
-if(strlen($char) > 1){
-    $char = $char[0];
-}
-
+$char = (string)($_GET['char'] ?? '');
 
 $names = fetch_names_by_initial($char);
 ?>
@@ -16,7 +12,7 @@ $names = fetch_names_by_initial($char);
     <?php foreach($names AS $name): ?>
        
         <li>
-            <a href="name.php?<?php echo http_build_query(['name' => $name]); ?>">
+            <a href="views/name.php?<?php echo http_build_query(['name' => $name]); ?>">
                 <?php echo e($name); ?>
             </a>    
        </li>
